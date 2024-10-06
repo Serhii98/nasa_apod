@@ -4,9 +4,6 @@ import 'package:dio/dio.dart';
 import 'package:dio_flutter_transformer2/dio_flutter_transformer2.dart';
 import 'package:flutter/foundation.dart';
 import 'package:nasa_apod/constants/app_strings.dart';
-import 'package:nasa_apod/environment.dart';
-import 'package:nasa_apod/src/core/network/platfrom_iterceptor.dart';
-import 'package:nasa_apod/src/core/network/token_interceptor.dart';
 import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 /// Timeout of API call
@@ -30,7 +27,7 @@ final class DioManager {
   static final DioManager _singleton = DioManager._internal();
 
   static void configure() {
-    _baseURL = Environment.fromEnv().backendUrl;
+    _baseURL = AppStrings.backendUrl;
     _singleton.dio.options
       ..baseUrl = _baseURL
       ..connectTimeout = timeout
@@ -39,11 +36,6 @@ final class DioManager {
 
     _singleton.dioIsolated.options = _singleton.dio.options;
     _singleton.dioIsolated.transformer = FlutterTransformer();
-
-    _singleton.dio.interceptors.add(TokenInterceptor());
-    _singleton.dio.interceptors.add(PlatformInterceptor());
-    _singleton.dioIsolated.interceptors.add(TokenInterceptor());
-    _singleton.dioIsolated.interceptors.add(PlatformInterceptor());
     if (!kReleaseMode) {
       _singleton.dio.interceptors.add(
         PrettyDioLogger(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nasa_apod/constants/app_durations.dart';
 import 'package:nasa_apod/constants/app_strings.dart';
+import 'package:nasa_apod/src/core/theme/extensions/theme_extension.dart';
 import 'package:nasa_apod/src/core/ui/states/base_controlled_state.dart';
 import 'package:nasa_apod/src/core/ui/widgets/base_stateful_widget.dart';
 import 'package:nasa_apod/src/ui/home/bloc/home_bloc.dart';
@@ -43,7 +44,7 @@ class _AnimatedTextState
       child: Text(
         state.data!.apod.title.orEmpty(),
         textAlign: TextAlign.center,
-        style: Theme.of(context).textTheme.titleLarge,
+        style: context.textTheme.titleLarge,
         overflow: TextOverflow.ellipsis,
         maxLines: 3,
       ),

@@ -1,6 +1,6 @@
 # nasa_apod
 
-1. Select dart endpoint nasa_apod\lib\web_dev.dart.
+1. Select dart endpoint nasa_apod\lib\main.dart.
 2. Add additional run args --web-renderer html.
 
 

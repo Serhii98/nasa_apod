@@ -18,7 +18,7 @@ final class ErrorsHandler {
     }
     if (exception.response?.statusCode == 400) {
       return ParsedError(
-        displayMessage: "Bad request", //TODO: change
+        displayMessage: "Bad request",
         errorType: ErrorType.other,
       );
     }

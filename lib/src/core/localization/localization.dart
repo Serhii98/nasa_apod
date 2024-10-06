@@ -8,7 +8,6 @@ import 'package:nasa_apod/values/l10n/gen/translation_en.dart';
 
 class Localization {
   static const String enKey = "en";
-  static const String ukKey = "uk";
 
   static List<Locale> get supportedLocales {
     final Locale enLocale = Translation.supportedLocales
@@ -26,8 +25,6 @@ class Localization {
   static String _getCountryCodeByLanguage(final String languageCode) {
     if (languageCode == enKey) {
       return "US";
-    } else if (languageCode == ukKey) {
-      return "UA";
     } else {
       throw DynamicLocalizationException("Unknown code to handle");
     }

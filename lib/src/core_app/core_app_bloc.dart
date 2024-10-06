@@ -5,9 +5,6 @@ import 'package:nasa_apod/src/core/bloc/base_bloc.dart';
 import 'package:nasa_apod/src/core/localization/lang_model.dart';
 import 'package:nasa_apod/src/core_app/bloc/core_app_bloc_events.dart';
 import 'package:nasa_apod/src/core_app/bloc/core_app_bloc_states.dart';
-import 'package:nasa_apod/src/data/managers/language/language_manager.dart';
-import 'package:nasa_apod/src/routing/router.dart';
-import 'package:nasa_apod/src/routing/router.gr.dart';
 import 'package:nasa_apod/values/l10n/gen/translation.dart';
 
 final class CoreAppBloc extends BaseBloc<CoreAppBlocEvent, CoreAppBlocState> {
@@ -61,20 +58,8 @@ final class CoreAppBloc extends BaseBloc<CoreAppBlocEvent, CoreAppBlocState> {
     );
   }
 
-  void _changeLanguage(final LangModel langModel) {
-    add(OnLanguageChanged(langModel: langModel));
-  }
-
   @override
-  void onCreated() async {
-    // LocationManager().registerPlatformInstance();
-    _languageChangedSubscription = LanguageManager()
-        .onNewLanguagePropagated
-        .listen((final LangModel value) {
-      _changeLanguage(value);
-      AppRouter().popAllAndPush(const SplashScreen());
-    });
-  }
+  void onCreated() async {}
 
   @override
   Future<void> close() async {

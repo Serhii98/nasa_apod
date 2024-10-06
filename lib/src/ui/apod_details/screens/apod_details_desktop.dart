@@ -35,7 +35,7 @@ final class ApodDetailsDesktopState extends BaseStatefulScreen<
       return const GetProgress();
     }
     if (state.hasError && state.parsedError?.showRefresh == true) {
-      return EmptyView();
+      return const EmptyView();
     }
     return const ApodDetailsContent();
   }

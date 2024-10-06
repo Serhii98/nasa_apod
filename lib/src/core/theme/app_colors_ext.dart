@@ -35,22 +35,6 @@ final class AppColorsExt extends ThemeExtension<AppColorsExt> {
         appleColorIcon: Color(0xFFFFFFFF),
       );
 
-  // factory AppColorsExt.dark() => const AppColorsExt(
-  //       primary: Color(0xfff7b500),
-  //       onPrimary: Color(0xFFFFFFFF),
-  //       secondary: Color(0xffFF5A1F),
-  //       onSecondary: Color(0xFFFFFFFF),
-  //       background: Color(0xFF0A0A0A),
-  //       onBackground: Color(0xFFFAFAFA),
-  //       surface: Color(0xFF161616),
-  //       onSurface: Color(0xFFFFFFFF),
-  //       error: Colors.red,
-  //       grey1: Color(0xFF919596),
-  //       grey2: Color(0xFF7D8488),
-  //       iconsColor: Color(0xFFBEC1C3),
-  //       appleColorBackground: Color(0xFFFFFFFF),
-  //       appleColorIcon: Color(0xFF000000),
-  //     );
   final Color primary;
   final Color onPrimary;
 
